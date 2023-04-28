@@ -34,19 +34,15 @@ const theme = createTheme({
   },
 });
 
-function TourCard() {
+function TourCard({ tour }) {
   return (
     <Grid item xs={3}>
       <ThemeProvider theme={theme}>
         <Paper elevation={3}>
-          <img
-            src='https://dynamic-media-cdn.tripadvisor.com/media/photo-o/11/44/df/4b/jogg-falls.jpg?w=1200&h=1200&s=1'
-            alt='jog falls'
-            className='img'
-          />
+          <img src={tour.image} alt={tour.name} className='img' />
           <Box paddingX={1}>
             <Typography variant='subtitle1' component='h2'>
-              Immerse into the falls
+              {tour.name}
             </Typography>
             <Box
               sx={{
@@ -60,7 +56,7 @@ function TourCard() {
                 }}
               />
               <Typography variant='body2' component='p' marginLeft={0.5}>
-                5 hours
+                {tour.durations} hours
               </Typography>
             </Box>
             <Box
@@ -78,15 +74,15 @@ function TourCard() {
                 size='small'
               />
               <Typography variant='body2' component='p' marginLeft={0.5}>
-                4.5
+              {tour.rating}
               </Typography>
               <Typography variant='body3' component='p' marginLeft={1.5}>
-                (55 reviews)
+                ({tour.numberOfReviews} reviews)
               </Typography>
             </Box>
             <Box>
               <Typography variant='h6' component='h3' marginTop={0}>
-                From INR 2000
+                From INR {tour.price}
               </Typography>
             </Box>
           </Box>
