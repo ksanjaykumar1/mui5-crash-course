@@ -56,7 +56,7 @@ function TourCard({ tour }) {
                 }}
               />
               <Typography variant='body2' component='p' marginLeft={0.5}>
-                {tour.durations} hours
+                {tour.duration} hours
               </Typography>
             </Box>
             <Box
