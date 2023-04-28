@@ -1,8 +1,61 @@
+import {
+  BottomNavigation,
+  BottomNavigationAction,
+  Box,
+  Container,
+  Paper,
+  Typography,
+} from '@mui/material';
+import QuiltedImageList from '../components/ImageCollage';
+import CustomizedAccordions from '../components/Accordian';
+import BasicModal from '../components/Modal';
 
 function Tour() {
   return (
-    <div>Tour</div>
-  )
+    <Container sx={{ width: 900 }}>
+      <Typography variant='h3' component={'h1'} marginTop={3}>
+        Explore the World in Vegas
+      </Typography>
+      <Box marginTop={3} sx={{ display: 'flex' }}>
+        <img
+          src='https://assets.simpleviewcms.com/simpleview/image/upload/c_limit,h_1200,q_75,w_1200/v1/clients/lasvegas/strip_b86ddbea-3add-4995-b449-ac85d700b027.jpg'
+          height={400}
+          width={500}
+        />
+        <QuiltedImageList />
+      </Box>
+      <Box>
+        <Typography variant='h6' component={'h6'} marginTop={3}>
+          About this ticket
+        </Typography>
+        <Typography variant='paragraph' component='p' marginTop={3}>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse
+          malesuada lacus ex, sit amet blandit leo lobortis eget. Lorem ipsum
+          dolor sit amet, consectetur adipiscing elit. Suspendisse malesuada
+          lacus ex, sit amet blandit leo lobortis eget.
+        </Typography>
+      </Box>
+      <Box marginBottom={10}>
+        <Typography
+          variant='h6'
+          component={'h6'}
+          marginTop={3}
+          marginBottom={2}
+        >
+          Frequently Asked Questions{' '}
+        </Typography>
+        <CustomizedAccordions />
+      </Box>
+      <Paper
+        sx={{ position: 'fixed', bottom: 0, left: 0, right: 0 }}
+        elevation={3}
+      >
+        <BottomNavigation>
+          <BasicModal />
+        </BottomNavigation>
+      </Paper>
+    </Container>
+  );
 }
 
-export default Tour
+export default Tour;
